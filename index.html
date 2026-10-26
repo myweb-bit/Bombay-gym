@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bombay Gym | Premier Fitness Center in Chapra</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            amber: '#F59E0B',
+                            red: '#EF4444',
+                            dark: '#090A0F',
+                            card: '#12141C',
+                            border: '#222634'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-amber {
+            box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.45);
+        }
+        .glow-red {
+            box-shadow: 0 0 35px -5px rgba(239, 68, 68, 0.45);
+        }
+        .hero-mesh {
+            background-color: #090a0f;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.16) 0px, transparent 55%),
+                radial-gradient(at 100% 20%, rgba(239, 68, 68, 0.14) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(245, 158, 11, 0.08) 0px, transparent 55%);
+        }
+        .glass-panel {
+            background: rgba(18, 20, 28, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-200 font-sans selection:bg-brand-amber selection:text-black pb-20 md:pb-0">
+
+    <!-- Top Urgent Notice Strip -->
+    <div class="bg-gradient-to-r from-amber-600 via-brand-amber to-orange-600 text-black text-xs md:text-sm font-extrabold py-2 px-4 text-center tracking-wide">
+        <span>⚡ SPECIAL SEASON PASS: Claim 1-Day Free Trial + Free Form Assessment!</span>
+        <a href="#trial" class="underline ml-2 hover:text-white transition">Book Trial Now →</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-50 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-amber to-orange-600 flex items-center justify-center font-black text-xl text-black shadow-lg shadow-brand-amber/30">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-black text-2xl tracking-tight text-white block leading-none">
+                            BOMBAY <span class="text-brand-amber">GYM</span>
+                        </span>
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400">Railway Colony • Chapra</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-7 text-sm font-medium">
+                    <a href="#features" class="hover:text-brand-amber transition">Features</a>
+                    <a href="#facilities" class="hover:text-brand-amber transition">Equipments</a>
+                    <a href="#pricing" class="hover:text-brand-amber transition">Plans</a>
+                    <a href="#bmi" class="hover:text-brand-amber transition">BMI Tool</a>
+                    <a href="#reviews" class="hover:text-brand-amber transition">Reviews</a>
+                    <a href="#location" class="hover:text-brand-amber transition">Location</a>
+                </div>
+
+                <!-- Call & Trial Buttons -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="tel:08340678440" class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/5 hover:bg-white/10 text-white text-sm font-medium border border-white/10 transition">
+                        <i class="fa-solid fa-phone text-brand-amber text-xs"></i>
+                        <span>083406 78440</span>
+                    </a>
+                    <a href="#trial" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-amber to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black text-sm font-bold shadow-lg shadow-brand-amber/30 transition transform hover:-translate-y-0.5">
+                        Free Pass
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-2xl text-slate-300 focus:outline-none">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-6 py-6 space-y-4">
+            <a href="#features" class="mobile-nav-link block font-medium hover:text-brand-amber">Why Bombay Gym</a>
+            <a href="#facilities" class="mobile-nav-link block font-medium hover:text-brand-amber">Workout Facilities</a>
+            <a href="#pricing" class="mobile-nav-link block font-medium hover:text-brand-amber">Membership Plans</a>
+            <a href="#bmi" class="mobile-nav-link block font-medium hover:text-brand-amber">BMI Calculator</a>
+            <a href="#reviews" class="mobile-nav-link block font-medium hover:text-brand-amber">Member Reviews (4.8★)</a>
+            <a href="#location" class="mobile-nav-link block font-medium hover:text-brand-amber">Location & Timing</a>
+            <a href="tel:08340678440" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-amber text-black font-bold text-center">
+                <i class="fa-solid fa-phone"></i> Call 083406 78440
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-mesh relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <!-- Rating Badge (187+ Reviews) -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+                        <span class="flex text-brand-amber text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </span>
+                        <span class="text-xs font-bold text-white tracking-wide">4.8 / 5.0 Rating (187+ Google Reviews)</span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    </div>
+
+                    <!-- Heading -->
+                    <h1 class="font-heading font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-white leading-tight">
+                        Redefine Your Strength At <span class="bg-gradient-to-r from-brand-amber via-yellow-400 to-orange-500 bg-clip-text text-transparent">Bombay Gym</span> Chapra
+                    </h1>
+
+                    <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light">
+                        Spacious training floor, imported heavy-duty biomechanic equipment, friendly trainers, and an energetic gym vibe right at Bharat Milap Chowk, Railway Colony.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#trial" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-amber to-orange-500 text-black font-heading font-extrabold text-base tracking-wider uppercase shadow-xl glow-amber hover:opacity-95 transition text-center">
+                            Claim Free 1-Day Pass <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                        <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-card hover:bg-white/10 border border-brand-border text-white font-heading font-bold text-base tracking-wider uppercase transition text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-tags text-brand-amber"></i> View Membership
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats from Google Maps profile -->
+                    <div class="pt-6 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="font-heading font-black text-2xl lg:text-3xl text-white">4.8★</p>
+                            <p class="text-xs text-slate-400 font-medium">Top Rated Gym</p>
+                        </div>
+                        <div>
+                            <p class="font-heading font-black text-2xl lg:text-3xl text-brand-amber">187+</p>
+                            <p class="text-xs text-slate-400 font-medium">Verified Google Reviews</p>
+                        </div>
+                        <div>
+                            <p class="font-heading font-black text-2xl lg:text-3xl text-emerald-400">2 Shifts</p>
+                            <p class="text-xs text-slate-400 font-medium">Morning & Evening</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md rounded-3xl overflow-hidden p-2 bg-gradient-to-b from-brand-amber/40 via-brand-border to-white/5 shadow-2xl">
+                        <div class="relative rounded-2xl overflow-hidden bg-brand-card">
+                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Bombay Gym workout space" 
+                                 class="w-full h-80 sm:h-96 object-cover brightness-90 hover:scale-105 transition duration-700">
+                            
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-4 left-4 right-4 glass-panel p-4 rounded-xl flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-amber/20 text-brand-amber flex items-center justify-center text-lg font-bold">
+                                        <i class="fa-solid fa-medal"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xs font-bold text-white uppercase tracking-wider">Well Maintained</h4>
+                                        <p class="text-[11px] text-slate-400">Clean & Spacious Setup</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold px-2.5 py-1 rounded bg-amber-500/20 text-brand-amber">Top Choice</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Highlights Strip -->
+    <section id="features" class="py-12 bg-black border-y border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <i class="fa-solid fa-weight-scale text-3xl text-brand-amber mb-3"></i>
+                    <h3 class="font-heading font-bold text-white text-base">Complete Heavy Iron</h3>
+                    <p class="text-xs text-slate-400 mt-1">Dumbbells, Olympic Barbells & Benches</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <i class="fa-solid fa-people-group text-3xl text-orange-500 mb-3"></i>
+                    <h3 class="font-heading font-bold text-white text-base">Friendly Environment</h3>
+                    <p class="text-xs text-slate-400 mt-1">Helpful coaches & supportive members</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <i class="fa-solid fa-heart-pulse text-3xl text-brand-amber mb-3"></i>
+                    <h3 class="font-heading font-bold text-white text-base">Cardio & Conditioning</h3>
+                    <p class="text-xs text-slate-400 mt-1">Treadmills, cross trainers & cycles</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/5">
+                    <i class="fa-solid fa-map-pin text-3xl text-orange-500 mb-3"></i>
+                    <h3 class="font-heading font-bold text-white text-base">Prime Central Location</h3>
+                    <p class="text-xs text-slate-400 mt-1">Bharat Milap Chowk, Railway Colony</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facility & Services Showcase -->
+    <section id="facilities" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs uppercase font-extrabold tracking-widest text-brand-amber bg-brand-amber/10 px-3 py-1 rounded-full border border-brand-amber/20">What Bombay Gym Delivers</span>
+            <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-4 uppercase">Engineered For Real Transformations</h2>
+            <p class="text-slate-400 text-sm sm:text-base mt-3">From heavy compound lifters to weight loss beginners, our gym layout has it all.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="group relative rounded-3xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-amber/50 transition duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=700&q=80" alt="Heavy Weightlifting" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-heading font-bold text-xl text-white">Strength & Bodybuilding</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Dedicated multi-station cable machines, lat pull downs, leg press, chest press, and free weight section for maximum hypertrophy.</p>
+                    <ul class="text-xs text-slate-300 space-y-1.5 pt-2">
+                        <li><i class="fa-solid fa-circle-check text-brand-amber mr-2"></i>Multi-angle adjustable benches</li>
+                        <li><i class="fa-solid fa-circle-check text-brand-amber mr-2"></i>Heavy Olympic plates & bars</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="group relative rounded-3xl overflow-hidden bg-brand-card border border-brand-border hover:border-orange-500/50 transition duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=700&q=80" alt="Cardio & Fat Loss" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-heading font-bold text-xl text-white">Cardio & Fat Burn Area</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">High-performance cardio equipment designed to boost stamina, melt excess fat, and keep heart health at peak condition.</p>
+                    <ul class="text-xs text-slate-300 space-y-1.5 pt-2">
+                        <li><i class="fa-solid fa-circle-check text-orange-500 mr-2"></i>Commercial running treadmills</li>
+                        <li><i class="fa-solid fa-circle-check text-orange-500 mr-2"></i>Aerobic & warm-up space</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="group relative rounded-3xl overflow-hidden bg-brand-card border border-brand-border hover:border-brand-amber/50 transition duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=700&q=80" alt="Personal Training" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-heading font-bold text-xl text-white">Trainer Guidance & Support</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Experienced fitness trainers on the floor to correct your lifting form, prevent injury, and suggest targeted workout splits.</p>
+                    <ul class="text-xs text-slate-300 space-y-1.5 pt-2">
+                        <li><i class="fa-solid fa-circle-check text-brand-amber mr-2"></i>Beginner guidance from day 1</li>
+                        <li><i class="fa-solid fa-circle-check text-brand-amber mr-2"></i>Personalized motivation & tips</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive BMI Calculator Section -->
+    <section id="bmi" class="py-20 bg-gradient-to-b from-brand-card to-brand-dark border-y border-brand-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-black/60 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="grid md:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="md:col-span-6 space-y-4">
+                        <span class="text-xs font-bold text-brand-amber uppercase tracking-wider">Instant Health Check</span>
+                        <h2 class="font-heading font-black text-3xl sm:text-4xl text-white uppercase">Calculate Your BMI</h2>
+                        <p class="text-slate-400 text-sm">Find your current Body Mass Index and discuss your target weight with Bombay Gym coaches.</p>
+                        
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-2 text-xs">
+                            <div class="flex justify-between text-slate-300"><span>Underweight Range:</span> <span class="font-bold text-blue-400">&lt; 18.5</span></div>
+                            <div class="flex justify-between text-slate-300"><span>Healthy Normal:</span> <span class="font-bold text-emerald-400">18.5 - 24.9</span></div>
+                            <div class="flex justify-between text-slate-300"><span>Overweight Range:</span> <span class="font-bold text-amber-400">25.0 - 29.9</span></div>
+                            <div class="flex justify-between text-slate-300"><span>Obese Category:</span> <span class="font-bold text-rose-500">30.0+</span></div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-6 bg-brand-card p-6 rounded-2xl border border-brand-border space-y-5">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase">Weight (KG)</label>
+                                <input type="number" id="bmi-weight" placeholder="e.g. 70" value="72" class="w-full bg-black/60 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-amber">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase">Height (CM)</label>
+                                <input type="number" id="bmi-height" placeholder="e.g. 172" value="175" class="w-full bg-black/60 border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-amber">
+                            </div>
+                        </div>
+
+                        <button id="calc-bmi-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-amber to-orange-500 font-heading font-extrabold text-black text-sm uppercase tracking-wider shadow-lg glow-amber hover:opacity-90 transition">
+                            Check BMI Score
+                        </button>
+
+                        <div id="bmi-result-box" class="p-4 rounded-xl bg-black/50 border border-white/5 text-center">
+                            <p class="text-xs text-slate-400 uppercase tracking-wider">Calculated BMI</p>
+                            <p id="bmi-score" class="font-heading font-black text-3xl text-brand-amber mt-1">23.5</p>
+                            <p id="bmi-status" class="text-sm font-semibold text-emerald-400 mt-1">Healthy & Normal Weight</p>
+                        </div>
+
+                        <a id="share-bmi-btn" href="https://wa.me/918340678440?text=Hi%20Bombay%20Gym%20Trainer,%20my%20calculated%20BMI%20is%2023.5.%20I%20want%20a%20fitness%20and%20diet%20consultation." target="_blank" class="w-full block py-2.5 rounded-xl bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 text-xs font-bold text-center hover:bg-emerald-600/30 transition">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> Send BMI to Trainer on WhatsApp
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Plans -->
+    <section id="pricing" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs uppercase font-extrabold tracking-widest text-brand-amber bg-brand-amber/10 px-3 py-1 rounded-full border border-brand-amber/20">Affordable Packages</span>
+            <h2 class="font-heading font-black text-3xl sm:text-5xl text-white mt-4 uppercase">Bombay Gym Membership Plans</h2>
+            <p class="text-slate-400 text-sm sm:text-base mt-3">Select the package that fits your goals. Click any plan to lock-in your slot via WhatsApp.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 items-stretch">
+            
+            <!-- Plan 1 -->
+            <div class="rounded-3xl p-8 bg-brand-card border border-brand-border flex flex-col justify-between hover:border-white/20 transition">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Monthly Starter</span>
+                    <h3 class="font-heading font-black text-2xl text-white mt-1">1 Month Plan</h3>
+                    <div class="mt-4 flex items-baseline gap-1">
+                        <span class="text-4xl font-heading font-black text-white">₹1,199</span>
+                        <span class="text-xs text-slate-400">/ month</span>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-2">Perfect for beginners wanting to experience the floor and equipment.</p>
+                    
+                    <hr class="border-white/10 my-6">
+
+                    <ul class="text-xs text-slate-300 space-y-3">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-amber"></i> Full Gym Floor Access</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-amber"></i> Cardio Zone Access</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-amber"></i> Locker Room & Changing Facility</li>
+                        <li class="flex items-center gap-2 text-slate-500"><i class="fa-solid fa-xmark"></i> Dedicated Personal Diet Chart</li>
+                    </ul>
+                </div>
+                <div class="pt-8">
+                    <a href="https://wa.me/918340678440?text=Hello%20Bombay%20Gym,%20I%20am%20interested%20in%20joining%20the%201-Month%20Starter%20Plan%20(Rs.1199)." target="_blank" class="block w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-heading font-bold text-xs uppercase tracking-wider text-center transition">
+                        Select 1 Month
+                    </a>
+                </div>
+            </div>
+
+            <!-- Plan 2 (Popular) -->
+            <div class="relative rounded-3xl p-8 bg-gradient-to-b from-brand-card via-black to-brand-card border-2 border-brand-amber glow-amber flex flex-col justify-between transform md:-translate-y-4">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-brand-amber text-black text-[10px] font-extrabold uppercase tracking-widest">
+                    Best Value Deal
+                </div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-amber">3-Month Transformation</span>
+                    <h3 class="font-heading font-black text-3xl text-white mt-1">Quarterly Pro</h3>
+                    <div class="mt-4 flex items-baseline gap-1">
+                        <span class="text-4xl font-heading font-black text-white">₹2,999</span>
+                        <span class="text-xs text-slate-400">/ 3 months</span>
+                    </div>
+                    <p class="text-xs text-brand-amber mt-2 font-semibold">Save ₹600 + Free Workout Routine Plan</p>
+                    
+                    <hr class="border-white/10 my-6">
+
+                    <ul class="text-xs text-slate-200 space-y-3">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Full Access to All Strength & Cardio Machines</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Free Body Measurement & Weight Tracking</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Personalized Muscle/Fat Loss Routine</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Trainer Support for Form Correction</li>
+                    </ul>
+                </div>
+                <div class="pt-8">
+                    <a href="https://wa.me/918340678440?text=Hello%20Bombay%20Gym,%20I%20want%20to%20enroll%20in%20the%203-Month%20Pro%20Plan%20(Rs.2999)." target="_blank" class="block w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-amber to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-heading font-bold text-xs uppercase tracking-wider text-center transition shadow-lg">
+                        Enroll 3 Months
+                    </a>
+                </div>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="rounded-3xl p-8 bg-brand-card border border-brand-border flex flex-col justify-between hover:border-white/20 transition">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Long Term Commitment</span>
+                    <h3 class="font-heading font-black text-2xl text-white mt-1">6 Months / Annual</h3>
+                    <div class="mt-4 flex items-baseline gap-1">
+                        <span class="text-4xl font-heading font-black text-white">₹5,499</span>
+                        <span class="text-xs text-slate-400">/ 6 months</span>
+                    </div>
+                    <p class="text-xs text-emerald-400 mt-2 font-medium">Biggest Savings for Serious Lifters</p>
+                    
+                    <hr class="border-white/10 my-6">
+
+                    <ul class="text-xs text-slate-300 space-y-3">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-amber"></i> Unlimited Access (Morning & Evening)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-amber"></i> Permanent Locker Allocation</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-amber"></i> Diet Consultation & Progress Checks</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-amber"></i> Membership Pause facility (Up to 20 days)</li>
+                    </ul>
+                </div>
+                <div class="pt-8">
+                    <a href="https://wa.me/918340678440?text=Hello%20Bombay%20Gym,%20I%20am%20interested%20in%20the%206-Month%20VIP%20Plan%20(Rs.5499)." target="_blank" class="block w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-heading font-bold text-xs uppercase tracking-wider text-center transition">
+                        Select 6 Months
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Real Google Reviews Section (Bombay Gym Details) -->
+    <section id="reviews" class="py-20 bg-black/40 border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+                <div>
+                    <span class="text-xs uppercase font-extrabold tracking-widest text-brand-amber">Member Testimonials</span>
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-white uppercase mt-1">Rated 4.8 Stars By 187+ Lifters</h2>
+                </div>
+                <div class="flex items-center gap-3 bg-brand-card px-5 py-3 rounded-2xl border border-brand-border">
+                    <i class="fa-brands fa-google text-2xl text-white"></i>
+                    <div>
+                        <div class="flex text-brand-amber text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs font-bold text-white">4.8 Rating (187 Google Reviews)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Review 1: Directly from Google Maps screenshot -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center font-bold text-black text-sm">
+                                PS
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Prashant Singh</h4>
+                                <span class="text-[11px] text-slate-400">Regular Gym Member</span>
+                            </div>
+                        </div>
+                        <span class="text-xs text-brand-amber"><i class="fa-solid fa-star"></i> 5.0</span>
+                    </div>
+                    <p class="text-xs text-slate-300 italic leading-relaxed">
+                        "I have been going to this gym for quite sometime now and would suggest everyone to come... well-maintained machines and friendly atmosphere in Chapra!"
+                    </p>
+                </div>
+
+                <!-- Review 2: Mentioned in Google profile -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-sm">
+                                AK
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Aman Kumar</h4>
+                                <span class="text-[11px] text-slate-400">Fitness Lifter</span>
+                            </div>
+                        </div>
+                        <span class="text-xs text-brand-amber"><i class="fa-solid fa-star"></i> 5.0</span>
+                    </div>
+                    <p class="text-xs text-slate-300 italic leading-relaxed">
+                        "Best gym near Bharat Milap Chowk and Railway Colony. Staff is very helpful and equipment is smooth. Clean floor with great lighting."
+                    </p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center font-bold text-white text-sm">
+                                VK
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Vikash Pandey</h4>
+                                <span class="text-[11px] text-slate-400">Verified Member</span>
+                            </div>
+                        </div>
+                        <span class="text-xs text-brand-amber"><i class="fa-solid fa-star"></i> 5.0</span>
+                    </div>
+                    <p class="text-xs text-slate-300 italic leading-relaxed">
+                        "Solid heavy weights and dumbell collection. Evening timing is convenient till 10 PM. Highly recommend Bombay Gym to anyone serious about bodybuilding."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Form (Direct to WhatsApp +918340678440) -->
+    <section id="trial" class="py-20 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-brand-card via-black to-brand-card border border-brand-amber/40 rounded-3xl p-8 sm:p-12 shadow-2xl relative">
+                
+                <div class="text-center max-w-xl mx-auto mb-8 space-y-2">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-amber">Start For Free</span>
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-white uppercase">Book Your Free Trial Pass</h2>
+                    <p class="text-xs sm:text-sm text-slate-400">Submit your details below and your trial pass will be sent directly to the Bombay Gym manager on WhatsApp.</p>
+                </div>
+
+                <form id="trial-form" class="space-y-4 max-w-lg mx-auto">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Full Name</label>
+                        <input type="text" id="user-name" required placeholder="e.g. Rahul Sharma" class="w-full bg-white/5 border border-brand-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-amber">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">WhatsApp Mobile Number</label>
+                            <input type="tel" id="user-phone" required placeholder="e.g. 9835xxxxxx" class="w-full bg-white/5 border border-brand-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-amber">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Preferred Workout Shift</label>
+                            <select id="user-slot" class="w-full bg-brand-card border border-brand-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-amber">
+                                <option value="Morning (06:00 AM - 09:30 AM)">Morning (06:00 AM - 09:30 AM)</option>
+                                <option value="Evening (04:00 PM - 07:00 PM)">Evening (04:00 PM - 07:00 PM)</option>
+                                <option value="Night (07:00 PM - 10:00 PM)">Night (07:00 PM - 10:00 PM)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Your Primary Goal</label>
+                        <select id="user-goal" class="w-full bg-brand-card border border-brand-border rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-amber">
+                            <option value="Fat Loss & Belly Reduction">Fat Loss & Belly Reduction</option>
+                            <option value="Muscle Building & Bulk">Muscle Building & Bulk</option>
+                            <option value="Strength & Stamina">Strength & Stamina</option>
+                            <option value="General Daily Fitness">General Daily Fitness</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 font-heading font-extrabold text-white text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Confirm Free Pass via WhatsApp
+                    </button>
+                    
+                    <p class="text-[11px] text-center text-slate-400">
+                        ⚡ Instant confirmation directly with Bombay Gym team. No delay.
+                    </p>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Timings Section -->
+    <section id="location" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+            
+            <!-- Details -->
+            <div class="lg:col-span-6 bg-brand-card border border-brand-border rounded-3xl p-8 flex flex-col justify-between">
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-xs uppercase font-extrabold tracking-widest text-brand-amber">Gym Location & Timings</span>
+                        <h2 class="font-heading font-black text-3xl text-white uppercase mt-1">Visit Bombay Gym</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-amber/10 text-brand-amber flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Bombay Gym</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Bharat Milap Chowk, Railway Colony, Chapra, Bihar - 841301</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Operating Hours</h4>
+                                <p class="text-xs text-slate-300 mt-0.5">Morning: <strong>05:30 AM – 10:30 AM</strong></p>
+                                <p class="text-xs text-slate-300 mt-0.5">Evening: <strong>03:30 PM – 10:00 PM</strong></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Direct Contact Number</h4>
+                                <a href="tel:08340678440" class="text-xs text-blue-400 hover:underline">083406 78440</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-8 flex flex-wrap gap-3">
+                    <a href="https://maps.app.goo.gl/yMd4WADU4vYDJxzu9" target="_blank" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase flex items-center gap-2 transition">
+                        <i class="fa-solid fa-diamond-turn-right text-brand-amber"></i> Open Google Maps
+                    </a>
+                    <a href="tel:08340678440" class="px-5 py-3 rounded-xl bg-brand-amber text-black hover:bg-yellow-400 font-bold text-xs uppercase flex items-center gap-2 transition">
+                        <i class="fa-solid fa-phone"></i> Call Gym Directly
+                    </a>
+                </div>
+            </div>
+
+            <!-- Map Embed -->
+            <div class="lg:col-span-6 bg-brand-card border border-brand-border rounded-3xl overflow-hidden min-h-[350px] relative">
+                <iframe 
+                    title="Bombay Gym Chapra Location"
+                    class="w-full h-full min-h-[350px] border-0 filter grayscale contrast-125 opacity-80 hover:opacity-100 transition duration-500"
+                    src="https://maps.google.com/maps?q=Bharat%20Milap%20Chowk%20Railway%20Colony%20Chapra%20Bihar%20841301&t=&z=16&ie=UTF8&iwloc=&output=embed">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-brand-border py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-amber flex items-center justify-center font-bold text-black text-sm">BG</div>
+                <span class="font-heading font-black text-lg text-white">BOMBAY GYM</span>
+                <span class="text-xs text-slate-500">| Bharat Milap Chowk, Chapra</span>
+            </div>
+            <p class="text-xs text-slate-500">
+                © <span id="current-year"></span> Bombay Gym Chapra. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Quick Action Bar -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-brand-card/95 backdrop-blur-lg border-t border-brand-border p-3 flex items-center gap-2">
+        <a href="tel:08340678440" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-white/10 text-white font-bold text-xs">
+            <i class="fa-solid fa-phone text-brand-amber"></i> Call
+        </a>
+        <a href="https://wa.me/918340678440?text=Hello%20Bombay%20Gym,%20I%20want%20to%20enquire%20about%20membership." target="_blank" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs shadow-lg">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="#trial" class="flex-1 flex items-center justify-center py-3 rounded-xl bg-brand-amber text-black font-bold text-xs">
+            Free Pass
+        </a>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Nav Drawer Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // BMI Calculator Logic
+        const calcBtn = document.getElementById('calc-bmi-btn');
+        const weightInput = document.getElementById('bmi-weight');
+        const heightInput = document.getElementById('bmi-height');
+        const scoreDisplay = document.getElementById('bmi-score');
+        const statusDisplay = document.getElementById('bmi-status');
+        const shareBmiBtn = document.getElementById('share-bmi-btn');
+
+        function calculateBMI() {
+            const weight = parseFloat(weightInput.value);
+            const heightCm = parseFloat(heightInput.value);
+
+            if (!weight || !heightCm || weight <= 0 || heightCm <= 0) {
+                statusDisplay.textContent = 'Please enter valid values!';
+                statusDisplay.className = 'text-sm font-semibold text-rose-500 mt-1';
+                return;
+            }
+
+            const heightM = heightCm / 100;
+            const bmi = (weight / (heightM * heightM)).toFixed(1);
+            scoreDisplay.textContent = bmi;
+
+            let category = '';
+            if (bmi < 18.5) {
+                category = 'Underweight (Bulking & Strength Split Recommended)';
+                statusDisplay.textContent = category;
+                statusDisplay.className = 'text-sm font-semibold text-blue-400 mt-1';
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                category = 'Healthy & Normal Weight (Ideal Baseline)';
+                statusDisplay.textContent = category;
+                statusDisplay.className = 'text-sm font-semibold text-emerald-400 mt-1';
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                category = 'Overweight (Cardio & Fat Loss Split Recommended)';
+                statusDisplay.textContent = category;
+                statusDisplay.className = 'text-sm font-semibold text-amber-400 mt-1';
+            } else {
+                category = 'Obese Range (Strict Transformation Plan Needed)';
+                statusDisplay.textContent = category;
+                statusDisplay.className = 'text-sm font-semibold text-rose-500 mt-1';
+            }
+
+            // Update WhatsApp share button with calculated values
+            shareBmiBtn.href = `https://wa.me/918340678440?text=Hi%20Bombay%20Gym%20Trainer,%20I%20calculated%20my%20BMI%20on%20your%20website.%20Score:%20${bmi}%20(${encodeURIComponent(category)}).%20Please%20guide%20me%20with%20a%20diet%20and%20workout%20plan.`;
+        }
+
+        calcBtn.addEventListener('click', calculateBMI);
+
+        // Trial Form WhatsApp Redirection
+        const trialForm = document.getElementById('trial-form');
+        trialForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('user-name').value.trim();
+            const phone = document.getElementById('user-phone').value.trim();
+            const slot = document.getElementById('user-slot').value;
+            const goal = document.getElementById('user-goal').value;
+
+            const message = `Hello Bombay Gym Team!%0A%0AI want to claim my *1-Day Free Workout Pass*:%0A- *Name:* ${encodeURIComponent(name)}%0A- *Phone:* ${encodeURIComponent(phone)}%0A- *Preferred Shift:* ${encodeURIComponent(slot)}%0A- *Fitness Goal:* ${encodeURIComponent(goal)}%0A%0APlease reserve my slot!`;
+
+            // Open WhatsApp direct to Bombay Gym owner
+            window.open(`https://wa.me/918340678440?text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html>
